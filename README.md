@@ -278,14 +278,11 @@ Script adds missing columns to match the integrated dataset format interaction_t
 ```
 │   └── epi_tgen.R    
 ```
-
 4. Preprocessing epistatic interactions associated with a set of cognitive traits in ADNI cohort dataset.
 ```
 │   |── epi_adni_cog.R  
 ```
-
 5. Coombining all epistatic data into one dataset.
-
 ```
 │   |── combine.R 
 ```
@@ -521,7 +518,8 @@ This will result in two files `case_study/datasets/genes_data/interactions.csv` 
 
 ### Running the experiment
 1. It is recommended to create a conda environment using Anaconda:
-```conda create -n sgusecases python=3.6 anaconda
+```
+conda create -n sgusecases python=3.6 anaconda
 ```
 2. Activate the newly created environment `source activate sgusecases` and install the required python packages:
 `pip install -r requirements.txt`
