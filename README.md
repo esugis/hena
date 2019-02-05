@@ -157,7 +157,9 @@ Each analysis (except for the integration part) cab be executed independently in
 To repeat these individual analyses please run the commands shown below from the root project catalogue:
 
 First you would need to install all required R libraries by running the following command:
-```Rscript libraries.R
+
+```
+Rscript libraries.R
 ```
 NB! In case you use Ubuntu 18.04 please install the following packages before running ``` script libraries.R```
 
