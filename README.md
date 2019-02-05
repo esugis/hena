@@ -427,14 +427,6 @@ cd comparison_public_db
 All the following commands will be executed assuming you are located in the folder  `comparison_public_db`.
 
 ### Repeating the comparison. User manual.
-!!!!!! For Ivan in testing mode:
-For testing purpose HENA dataset can be downloaded  from  FIgshare repository https://ndownloader.figshare.com/files/13997786
-to
-```
-hena
-  └── results
-       └── integration
-```
 
 1. To download datasets from GeneMania and STRING databases; place co-expression, ppi, and genetic interactions into the corresponding folders please run the following command:
 ```
