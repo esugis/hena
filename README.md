@@ -127,7 +127,6 @@ hena
 └── case_study
 ```
 
-
 ## DATA
 
 Data is stored in the folder  `hena/data`
@@ -174,12 +173,10 @@ Run the analysis of GWAS data related to Alzheimer's disease:
 ```
 Rscript analysis_gwas.R
 ```
-
 Run the analysis of positive selection data related to Alzheimer's disease:
 ```
 Rscript analysis_positive_selection.R
 ```
-
 Run the analysis of protein-protein interactions related to Azheimer's disease, synaptic interactions and highly confident interactions in human:
 ```
 Rscript analysis_ppi_intact.R
@@ -188,23 +185,19 @@ Run the analysis of protein-protein interactions related to brain ageing:
 ```
 Rscript analysis_ppi_related_to_brain_ageing.R
 ```
-
 Run the analysis of gene expression in six whole-brain microarrays from Allen Brain Atlas:
 ```
 Rscript analysis_allen_brain.R
 ```
-
 Run gene co-expression analysis in Alzheimer's disease and healthy samples. 
 **We do not recommend to run this co-expression analysis on your laptop. ** Precomputed file is located in folder  `results/adn/integration/`.
 ```
 Rscript analysis_adn.R
 ```
-
 To integrate all individual results  and plot interaction statistics run the following script:
 ```
 Rscript integrate.R
 ```
-
 As the result of the integration you will receive two final files describing all the interactions `integrated_int.txt` and  the corresponding nodes (genes) attributes  `node_attributes.txt`.
 
 Additionally, after HENA has been assembled, script  `hena/scripts/integration/plot_stats.R` outputs a pdf file with the histogram describing the number of interactions of each individual interaction type coming from individual data sources and a table (as txt file) with the corresponding number of nodes and edges.
@@ -247,12 +240,10 @@ Results will be written into files for individual probesets to the folder corres
 ```
     │   |── coexp_int.R 
 ```
-
 5. Removing “self loops”(co-expression of gene with itself) from the co-expression dataset.
 ```
     │   |── coexp2undirrected_selfloops_rm.R  
 ```
-
 6. Adding columns interaction_type, data_source.
 ```
     │   └──  final_adn.R  
@@ -292,7 +283,6 @@ Script adds missing columns to match the integrated dataset format interaction_t
 |── intact  
 │   |── intact.R  
 ```
-
 2. Preprocessing protein-protein interactions from IntAct database where one interacting partner is associated with Alzheimre's disease.
 ```
 │   |── alz_intact.R   
