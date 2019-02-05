@@ -565,3 +565,8 @@ genes_data
 ```
 
 Files  `case_study/datasets/genes_data/rf_predictions_alzheimer.csv` and  `case_study/datasets/genes_data/hinsage_predictions_alzheimer.csv`  contain the lists of genes shown by independent research to be associated with the disease, and the corresponding probabilities provided by random forest and HinSAGE. 
+
+
+### Acknowledgements ###
+The case study was developed together with Anna Leontjeva https://github.com/annitrolla.
+We would like to acknowledge the funding support from the European Union’s Seventh Framework Programme for research, technological development and demonstration under grant agreement No 305299 (http://www.agedbrainsysbio.eu). We also give thanks to the Estonian Research Council grants (PSG59; IUT34-4); the European Regional Development Fund for CoE of Estonian ICT research EXCITE project. Additionally, we thank Yuriy Tyshetskiy and Kevin Jung who provided insight and expertise that greatly assisted the development of the case study, and Ivan Kuzmin for assisting in solving non-trivial technical issues.Additionally, we thank Yuriy Tyshetskiy and Kevin Jung who provided insight and expertise that greatly assisted the development of the case study, and Ivan Kuzmin for assisting in solving non-trivial technical issues.
