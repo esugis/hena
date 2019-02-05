@@ -475,7 +475,8 @@ The visualization of the overlapping interactions are created using UpsetterR to
 
 To create the plots run the following script:
 
-```Rscipt scripts/plot_comparisons.R
+```
+Rscipt scripts/plot_comparisons.R
 ```
 As a result two files will be created:
 co-expression.pdf and ppi.pdf that demostrate the number of interactions overlap in GeneMania, STRING and integrated dataset.
