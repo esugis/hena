@@ -503,33 +503,65 @@ HENA node attributes file: `https://doi.org/10.6084/m9.figshare.7528460`
 ### Data set preparation for GCN application
 For this case study we have excluded IGRI to keep interactions between nodes that were mapped directly to genes, and co-expression interactions in disease related brain regions with low co-expression values (< 0.5).
 
-In order to perform classification task we have used gene status reagarding to its realtion to any disease in human based on the evolutionary studies review by Spataro et al. to define a negative class (see the article for details). This study identified ~1500 genes that have not shown  realtion  to any of the diseases based on he evolutionary studies. In the node classification task these 1500 genes will constitute a negative class.
+In order to perform classification task we have used gene status reagarding to its realtion to any disease in human based on the evolutionary studies review by Spataro et al. to define a negative class (see the article for details). This study identified ~1500 genes that have not shown  realtion to any of the diseases based on he evolutionary studies. In the node classification task these 1500 genes will constitute a negative class. The file with the the gene status is located in here `case_study/data/negative_class/gene_status.csv`.
 
-Data set preparation for the application of GCN  is performed  by executing the following R script:
+Data set preparation for the application of GCN  is performed  by executing the following R scripts:
 ```
+Rscipt highly_exp_genes_in_dis_brain_regions.R
 Rscipt case_study/scripts/prepare_data_GCN.R
 ```
 This will result in two files `case_study/datasets/genes_data/interactions.csv` and  `case_study/datasets/genes_data/node_attributes.csv`.
 
-NB! We recommend to follow the steps of the procedure as it might not run sucessfully otherwise.
+**NB! We recommend to follow the steps of the procedure as it might not run sucessfully otherwise.**
 
 ### Installation requirements
 * Install Python 3.6.3. We recommend installing Anaconda that you can download from [here](https://conda.io/docs/user-guide/install/download.html) 
 * You need to install [docker](https://docs.docker.com/)  
-* Some of the steps require R (version 3.4.2) that can be installed from [here](https://cran.r-project.org/). It is highly recommended to install [RStudio](https://www.rstudio.com/products/rstudio/download/) as well.
+* Some of the steps require R version 3.4.2. It is highly recommended to install [RStudio](https://www.rstudio.com/products/rstudio/download/) as well.
 
+### Running the experiment
+1. It is recommended to create a conda environment using Anaconda:
+```conda create -n sgusecases python=3.6 anaconda
+```
+2. Activate the newly created environment `source activate sgusecases` and install the required python packages:
+`pip install -r requirements.txt`
 
+3. Open RStudio and copy the following lines to install R packages:
+```
+cran.packages <- c("igraph", "randomForest", "h2o", "ModelMetrics", "ggplot2", "tidyr", "dplyr", "data.table", "stringr")
+install.packages(cran.packages)
+```
+4. Navigate to `case_study` directory in your terminal and  clone GraphSAGE repository  `git clone https://github.com/williamleif/GraphSAGE.git`.
+Install the requirements from `case_study/GraphSAGE` folder  `$ pip install -r requirements.txt`. Navigate back to `case_study`.
+5. Clone the stellargraph repository `git clone https://github.com/stellargraph/stellargraph.git -b usecase/genes`
+6. Navigate to `stellargraph` folder and install it `pip install -e .`
+7. Once everything is installed navigate back to `case_study/genes/` and run `./genes_analysis.sh` that produces the files with all the results:
 
+```
+genes_data
+├── all_features.csv
+├── biological_features.csv
+├── coexpression_graphsage_embs.csv
+├── edgelist.csv
+├── epistasis_graphsage_embs.csv
+├── graph_features.csv
+├── hinsage_all_features.csv
+├── hinsage_biological_features.csv
+├── hinsage_graph_features.csv
+├── hops_coexpression_1.csv
+├── hops_coexpression_2.csv
+├── hops_epistasis_1.csv
+├── hops_epistasis_2.csv
+├── hops_ppi_1.csv
+├── hops_ppi_2.csv
+├── interactions.csv
+├── node_attributes.csv
+├── nodes_hops.csv
+├── ppi_graphsage_embs.csv
+├── reconstruction_mse.png
+├── rf_predictions_graph_set.csv
+├── rf_predictions_alzheimer.csv
+└── hinsage_predictions_alzheimer.csv
+```
 
-
-
-
-
-
-
-
-The script will prepare gene lists for the interpretation of the results provided by the classifiers:
-
-All individual gene lists are obrained from the publications by  as supplementary tables. 
-Gene names are converted to the ENSG IDs, search is performed based on the ENSG ID.
-Files  `case_study/datasets/genes_data/rf_predictions_alzheimer.csv` and  `case_study/datasets/genes_data/hinsage_predictions_alzheimer.csv`  contain the lists of genes that were present in the Alzheimer's disease-related publications that were not related to this researc and the predictions of random forest and HinSAGE.
+Files  `case_study/datasets/genes_data/rf_predictions_alzheimer.csv` and  `case_study/datasets/genes_data/hinsage_predictions_alzheimer.csv`  contain the lists of genes shown by independent research to be associated with the disease, and the corresponding probabilities provided by random forest and HinSAGE. 

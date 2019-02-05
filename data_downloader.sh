@@ -168,3 +168,4 @@ echo "All precomputed data is now located in the corresponding individual folder
 mkdir comparison_public_db
 mkdir case_study
 mkdir case_study/datasets
+mkdir case_study/datasets/genes_data
