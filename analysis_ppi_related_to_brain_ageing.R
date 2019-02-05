@@ -1,0 +1,4 @@
+print("ANALYSIS OF PROTEN-PROTEIN INTERACTION RELATED TO BRAIN AGEING")
+source("scripts/pba/pba_int.R")
+
+

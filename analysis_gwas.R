@@ -1,0 +1,2 @@
+print("ANALYSIS OF GWAS DATA ASSOCIATED WITH ALZHEIMER'S DISEASE)
+source("scripts/gwas/gwas2ensg.R")
