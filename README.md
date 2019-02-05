@@ -389,7 +389,7 @@ As a results the `results/allenbrain` folder will contain the following files in
 ```
 
 ## COMPARISON WITH THE PUBLIC DATABASES
-Since there are no alternative Alzheimer's diseaes scpecific datasets available for comparison, we have benchmarked integrated dataset using resources that collect non-disease specific datasets. For that purpose GENEMANIA and STRING data were downloaded and arranged into groups of interactions of class co-expression, physical protein interactions (PPI) and genetic interactions (the latter was compared with epistatic intecations). 
+Since there are no alternative Alzheimer's disease scpecific datasets available for comparison, we have benchmarked integrated dataset using resources that collect non-disease specific datasets. For that purpose GENEMANIA and STRING data were downloaded and arranged into groups of interactions of class co-expression, physical protein interactions (PPI) and genetic interactions (the latter was compared with epistatic intecations). 
 
 The folder  `comparison_public_db` is located in the project root catalogue and has the following structure:
 
