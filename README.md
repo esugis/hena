@@ -161,13 +161,13 @@ First you would need to install all required R libraries by running the followin
 ```
 Rscript libraries.R
 ```
-NB! In case you use Ubuntu 18.04 please install the following packages before running ``` script libraries.R```
+NB! In case you use Ubuntu 18.04 please install the following packages before running `script libraries.R`
 
-```r-base build-essential netcdf-bin libudunits2-dev libnetcdf-dev gfortran liblapack-dev libopenblas-dev```
+`r-base build-essential netcdf-bin libudunits2-dev libnetcdf-dev gfortran liblapack-dev libopenblas-dev`
 
 Run the analysis of epistatic interactions:
 ```
-`Rscript analysis_epistasis.R
+Rscript analysis_epistasis.R
 ```
 Run the analysis of GWAS data related to Alzheimer's disease:
 ```
