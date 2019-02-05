@@ -30,7 +30,9 @@ By default the project will be cloned or unpacked to the folder `hena`.
 Navigate to the the folder `hena` main default catalogue of the project.
 
 In the terminal you can do it by typing:
-``` cd hena
+
+``` 
+cd hena
 ```
 All the following commands will be executed assuming you are located in the folder  `hena`.
 
