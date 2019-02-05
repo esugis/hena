@@ -516,7 +516,7 @@ conda create -n sgusecases python=3.6 anaconda
 
 3. Open RStudio and copy the following lines to install R packages:
 ```
-cran.packages <- c("igraph", "randomForest", "h2o", "ModelMetrics", "ggplot2", "tidyr", "dplyr", "data.table", "stringr")
+cran.packages <- c("igraph", "randomForest", "h2o", "ModelMetrics", "ggplot2", "tidyr", "dplyr", "data.table", "stringr", "gProfileR")
 install.packages(cran.packages)
 ```
 4. Navigate to `case_study` directory in your terminal and  clone GraphSAGE repository  `git clone https://github.com/williamleif/GraphSAGE.git`.
