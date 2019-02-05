@@ -18,8 +18,7 @@ To exicute only *case study* analysis with the application of Graph Convolutiona
 
 
 ## GETTING STARTED
-1. Clone repository
-To clone repository to your local machine or to the server use the following command:  
+1. Clone repository to your local machine or to the server use the following command:  
 ```
 git clone https://github.com/esugis/hena.git  
 ```
