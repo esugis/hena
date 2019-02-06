@@ -481,21 +481,21 @@ This repository contains the code to reproduces the results presented in the art
 ## Data
 
 ### Data acquisition 
-If you have repeated the assembley of HENA data set in the previous steps,  please copy two files `integrated_int.txt` and `integrated_int_attributes.txt` from  the project folder `hena/results/integration/` to `hena/case_study/data/`.
+If you have repeated the assembley of HENA data set in the previous steps,  please copy two files `integrated_int.RData` and `node_attributes.RData` from  the project folder `hena/results/integration/` to `hena/case_study/data/`.
 
 Alternatively you can download HENA interactions and node attributes from figshare repository and place them into the folder `hena/case_study/data/` .
-HENA interactions file: `https://doi.org/10.6084/m9.figshare.7528460`
-HENA node attributes file: `https://doi.org/10.6084/m9.figshare.7528460`
+HENA interactions file: `https://ndownloader.figshare.com/files/14185094`
+HENA node attributes file: `https://ndownloader.figshare.com/files/14185124`
 
 ### Data set preparation for GCN application
 For this case study we have excluded IGRI to keep interactions between nodes that were mapped directly to genes, and co-expression interactions in disease related brain regions with low co-expression values (< 0.5).
 
 In order to perform classification task we have used gene status reagarding to its realtion to any disease in human based on the evolutionary studies review by Spataro et al. to define a negative class (see the article for details). This study identified ~1500 genes that have not shown  realtion to any of the diseases based on he evolutionary studies. In the node classification task these 1500 genes will constitute a negative class. The file with the the gene status is located in here `case_study/data/negative_class/gene_status.csv`.
 
-Data set preparation for the application of GCN  is performed  by executing the following R scripts:
+Data set preparation for the application of GCN  is performed  by executing the following R scripts from the root project directory `hena`:
 ```
-Rscipt highly_exp_genes_in_dis_brain_regions.R
-Rscipt case_study/scripts/prepare_data_GCN.R
+Rscript case_study/scripts/highly_exp_genes_in_dis_brain_regions.R
+Rscript case_study/scripts/prepare_data_GCN.R
 ```
 This will result in two files `case_study/datasets/genes_data/interactions.csv` and  `case_study/datasets/genes_data/node_attributes.csv`.
 
