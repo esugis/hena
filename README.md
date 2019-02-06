@@ -190,7 +190,7 @@ Run the analysis of gene expression in six whole-brain microarrays from Allen Br
 Rscript analysis_allen_brain.R
 ```
 Run gene co-expression analysis in Alzheimer's disease and healthy samples. 
-**We do not recommend to run this co-expression analysis on your laptop. ** Precomputed file is located in folder  `results/adn/integration/`.
+**We do not recommend to run this co-expression analysis on your laptop.** Precomputed file is located in folder  `results/adn/integration/`.
 ```
 Rscript analysis_adn.R
 ```
@@ -214,7 +214,7 @@ This section provides the description of individual analysis steps and the corre
 As a user you don't need to run these scripts. Instead please follow the instructions described in the section "SCRIPTS. USER MANUAL "REPEATING THE ANALYSIS".
 
 #### Calculation of gene co-expression using microarray data. 
-** Computations of all against co-expression between 50kx50k probes in every dataset with intermediate step of saving the results requires substantial operative memory and file storage resources. We do not recommend to run this co-expression analysis on your laptop. ** Precomputed file is located in folder  `results/adn/integration/
+**Computations of all against co-expression between 50kx50k probes in every dataset with intermediate step of saving the results requires substantial operative memory and file storage resources. We do not recommend to run this co-expression analysis on your laptop.** Precomputed file is located in folder  `results/adn/integration/
 `
 1. Filtering out probesets with SD < 0.29. Extracting Alzheimer’s related and healthy samples from the data sets. Calculating the co-expression between  all probesets in each of the data sets using  Spearman correlation coefficient. For each individual probeset in each of the datasets script creates 2 separate files in .txt and .RData formats. Files are named after the probeset. Created files contain the names of the correlated probesets and the corresponding Spearman coefficient.
 ```
@@ -441,7 +441,7 @@ Rscript string_coexp_ppi_preprocess.R
 ```
 5. Run the comparison by executing the following:
 ```
-./ scripts/compare_datasets.sh
+./scripts/compare_datasets.sh
 ```
 ### Interpreting the results
 The results folder contains sub-directories related to the individual comparison steps.
@@ -462,7 +462,7 @@ The visualization of the overlapping interactions are created using UpsetterR to
 To create the plots run the following script:
 
 ```
-Rscipt scripts/plot_comparisons.R
+Rscript scripts/plot_comparisons.R
 ```
 As a result two files will be created:
 co-expression.pdf and ppi.pdf that demostrate the number of interactions overlap in GeneMania, STRING and integrated dataset.
