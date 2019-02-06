@@ -160,7 +160,7 @@ dim(wlx_genes_allsam)
 
 #################
 #Load converted probe IDs to ENSG
-load(file = "results/allenbrain/p2ensg_all.RData")
+load(file = "case_study/data/p2ensg_all.RData")
 
 p2ensg_orig$entrez_id <- as.character(p2ensg_orig$entrez_id)
 wlx_genes_allsam2engs <- merge(wlx_genes_allsam,p2ensg_orig, by.x="V1", by.y="probe_id", all.x=T)
