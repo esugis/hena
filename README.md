@@ -497,7 +497,7 @@ Data set preparation for the application of GCN  is performed  by executing the 
 Rscript case_study/scripts/highly_exp_genes_in_dis_brain_regions.R
 Rscript case_study/scripts/prepare_data_GCN.R
 ```
-This will result in two files `case_study/datasets/genes_data/interactions.csv` and  `case_study/datasets/genes_data/node_attributes.csv`.
+This will result in two files `case_study/datasets/genes_data/interactions.csv` and  `case_study/datasets/genes_data/node_attributes.csv`. 
 
 **NB! We recommend to follow the steps of the procedure as it might not run sucessfully otherwise.**
 

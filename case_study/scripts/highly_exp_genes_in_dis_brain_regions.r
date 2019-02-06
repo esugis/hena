@@ -2,6 +2,7 @@
 # Then quantile normalization is applied over combined data.
 # Finds genes that are expressed higher in the disease-related brain regions 
 # Read the expression from MicroarrayExpression.csv  Ontology.csv  PACall.csv  Probes.csv  Readme.txt  SampleAnnot.csv
+print("Reading in AllenBrain data sets. This might take some time. Be patient.")
 maexp_178236545 <- read.csv(file = "data/allenbrain/178236545_ds/MicroarrayExpression.csv", header = F)
 
 # Read ontology
@@ -92,6 +93,7 @@ maexp_178238387<- maexp_178238387[,-1]
 colnames(maexp_178238387) <- sampleann_178238387$structure_acronym
 
 # Merge datasets based on the probesests
+print("Merging data sets based on probesets")
 # Merge maexp_178236545 and maexp_178238266
 ds1_2 <- merge(maexp_178236545[,1:501], maexp_178238266[,1:407], by="row.names", all=T)
 row.names(ds1_2) <- ds1_2$Row.names
