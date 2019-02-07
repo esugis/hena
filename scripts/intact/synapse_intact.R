@@ -10,7 +10,7 @@ setwd(resdir)
 
 # Read in text file of all interactions with miscore >0.45 downloaded from IntAct and save them as RData
 # Please indicate the path to the downloaded data
-pring("Loading the data")
+print("Loading the data")
 syn_intact <- read.delim("../../data/intact/synapse_intact_v_4_2_6.txt", stringsAsFactors=F, sep = "\t", header=T)
 
 print("Performing analysis")
