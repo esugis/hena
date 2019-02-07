@@ -22,7 +22,7 @@ echo "Done!"
 
 echo "Downloading PPI related to brain ageing data."
 mkdir data/pba
-wget https://ndownloader.figshare.com/files/10148931?private_link=0a30246c119d1db7f00c -O data/pba/PBA_PPI_HS.txt
+wget https://ndownloader.figshare.com/files/13993100 -O data/pba/PBA_PPI_HS.txt
 echo "Done!"
 
 echo "Downloading gene expression in disease and healthy samples."
