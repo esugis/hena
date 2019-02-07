@@ -75,7 +75,7 @@ length(curr_id)
 
 # Convert ids using biomart
 library(biomaRt)
-mart.pr <- useMart("ENSEMBL_MART_ENSEMBL", "hsapiens_gene_ensembl", host = "ensembl.org")
+mart.pr <- useMart("ENSEMBL_MART_ENSEMBL", "hsapiens_gene_ensembl", host = "www.ensembl.org")
 curr_id2ensg <- getBM(attributes = c("ensembl_gene_id"), filters=c("ensembl_gene_id"), values = curr_id, mart = mart.pr)
 
 curr_id2ensg <-as.character(as.vector(curr_id2ensg$ensembl_gene_id))
