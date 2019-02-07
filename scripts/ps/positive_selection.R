@@ -8,7 +8,7 @@ dir.create(file.path(resdir),showWarnings = FALSE, recursive = TRUE)
 setwd(resdir)
 
 # Load the data
-ps <- read.csv(file = "../../data/ps/positive_selection_data.csv", sep  = ",", header = T, stringsAsFactors = F)
+ps <- read.csv(file = "../../data/ps/positive_darwinian_selection.csv", sep  = ",", header = T, stringsAsFactors = F)
 
 # Extract the columns containing ENSG id and p-value
 ps <- ps[,c(1,8)]
