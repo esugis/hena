@@ -73,9 +73,7 @@ colnames(epi_adni_cog) <- c("ensg1","ensg2","score","interaction_type","data_sou
 curr_id <- unique(c(epi_adni_cog$ensg1,epi_adni_cog$ensg2 ))
 length(curr_id)
 
-# Convert ids
-
-using biomart
+# Convert ids using biomart
 library(biomaRt)
 mart.pr <- useMart("ENSEMBL_MART_ENSEMBL", "hsapiens_gene_ensembl", host = "ensembl.org")
 curr_id2ensg <- getBM(attributes = c("ensembl_gene_id"), filters=c("ensembl_gene_id"), values = curr_id, mart = mart.pr)
