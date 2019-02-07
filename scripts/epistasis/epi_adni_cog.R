@@ -110,7 +110,7 @@ curr_igri_ensg<-unique(unlist(str_split(epi_adni_cog_igri_ensg,"-")))
 length(curr_igri_ensg)
 
 #Convert gene ids and ensg id to the latest Ensembl using biomart
-mart.pr <- useMart("ENSEMBL_MART_ENSEMBL", "hsapiens_gene_ensembl", host = "ensembl.org")
+mart.pr <- useMart("ENSEMBL_MART_ENSEMBL", "hsapiens_gene_ensembl", host = "www.ensembl.org")
 epi_adni_cog_igri_ensg2ensg <- getBM(attributes = c("ensembl_gene_id"), filters=c("ensembl_gene_id"), values = curr_igri_ensg, mart = mart.pr)
 epi_adni_cog_igri_ensg_lv <-as.character(as.vector(epi_adni_cog_igri_ensg2ensg$ensembl_gene_id))
 
