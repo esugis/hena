@@ -1,4 +1,5 @@
 # This script processes inteacrtion from IntAct with mi score >0.45
+library(gProfileR)
 
 # Create the folder where current results will be written
 resdir<-paste("results","intact",sep="/")

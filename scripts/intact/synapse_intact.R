@@ -1,4 +1,5 @@
 # This script processes manually curated synapse realted  dataset from IntAct
+library(gProfileR)
 
 # Create the folder where current results will be written
 resdir<-paste("results","intact",sep="/")

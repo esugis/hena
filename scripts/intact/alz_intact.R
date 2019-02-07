@@ -1,5 +1,7 @@
 # This script processes interactions from curated datasets related to Alzheimer's disease from IntAct with mi score >0.45
 
+library(gProfileR)
+
 # Create the folder where current results will be written
 resdir<-paste("results","intact",sep="/")
 dir.create(file.path(resdir),showWarnings = FALSE, recursive = TRUE)
