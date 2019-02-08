@@ -163,7 +163,7 @@ Rscript libraries.R
 ```
 NB! In case you use Ubuntu 18.04 please install the following packages before running `script libraries.R`
 
-`r-base build-essential netcdf-bin libudunits2-dev libnetcdf-dev gfortran liblapack-dev libopenblas-dev`
+`r-base build-essential netcdf-bin libudunits2-dev libnetcdf-dev gfortran liblapack-dev libopenblas-dev libxml2-dev libssl-dev`
 
 Run the analysis of epistatic interactions:
 ```
