@@ -13,17 +13,17 @@ mkdir data_db/genemania/genetic_int
 wget -r --no-parent http://genemania.org/data/current/Homo_sapiens/ --no-check-certificate -P data_db/genemania/coexp
 
 cd data_db/genemania/coexp/genemania.org/data/current/Homo_sapiens
-rm -f "Predicted*.txt"
+#rm -f "Predicted*.txt"
 
 # Move files to the dedicated folders
 #find . -name '*Co-expression*' -exec mv -i {} ~/hena/comparison/data_db/genemania/coexp/ \;
-mv Co-expression* data_db/genemania/coexp/
+mv *Co-expression* ../../../../
 #find . -name '*Physical_Interactions*' -exec mv -i {} ~/hena/comparison/data_db/genemania/ppi/ \;
-mv Physical_Interactions* data_db/genemania/ppi/
+mv *Physical_Interactions* ../../../../../ppi/
 #find . -name '*Genetic_Interactions*' -exec mv -i {} ~/hena/comparison/data_db/genemania/genetic_int/ \;
-mv Genetic_Interactions* data_db/genemania/genetic_int/
+mv *Genetic_Interactions* ../../../../../genetic_int/
 
-cd data_db
+ cd ../../../../../../
 # Data folder folder for string_db
 mkdir data_db/string_db
 cd data_db/string_db/
