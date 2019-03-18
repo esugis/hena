@@ -9,7 +9,8 @@ mkdir data_db/genemania
 mkdir data_db/genemania/coexp
 mkdir data_db/genemania/ppi
 mkdir data_db/genemania/genetic_int
-wget -A "Co-expression*" -R http://genemania.org/data/current/Homo_sapiens/ --no-check-certificate -O data_db/genemania/coexp
+#wget -A "Co-expression*" -R http://genemania.org/data/current/Homo_sapiens/ --no-check-certificate -P data_db/genemania/coexp
+wget -r --no-parent http://genemania.org/data/current/Homo_sapiens/ --no-check-certificate -P data_db/genemania/coexp
 
 cd data_db/genemania/coexp/genemania.org/data/current/Homo_sapiens
 rm -f "Predicted*.txt"
