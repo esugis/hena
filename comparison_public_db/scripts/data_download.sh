@@ -29,10 +29,10 @@ cd data_db/string_db/
 #wget https://stringdb-static.org/download/protein.links.full.v10.5/9606.protein.links.full.v10.5.txt.gz
 #wget https://stringdb-static.org/download/protein.actions.v10.5/9606.protein.actions.v10.5.txt.gz
 
-wget https://ndownloader.figshare.com/files/14629310 9606.protein.actions.v10.5.txt
-wget https://ndownloader.figshare.com/files/14629331 9606.protein.links.detailed.v10.5.txt
-wget https://ndownloader.figshare.com/files/14629337 9606.protein.links.v10.5.txt
-wget https://ndownloader.figshare.com/files/14629475 9606.protein.links.full.v10.5.txt
+wget https://ndownloader.figshare.com/files/14629310 -O 9606.protein.actions.v10.5.txt
+wget https://ndownloader.figshare.com/files/14629331 -O 9606.protein.links.detailed.v10.5.txt
+wget https://ndownloader.figshare.com/files/14629337 -O 9606.protein.links.v10.5.txt
+wget https://ndownloader.figshare.com/files/14629475 -O 9606.protein.links.full.v10.5.txt
 
 # Unzip
 #gunzip 9606.protein.actions.v10.5.txt.gz
