@@ -16,11 +16,14 @@ cd data_db/genemania/coexp/genemania.org/data/current/Homo_sapiens
 rm -f "Predicted*.txt"
 
 # Move files to the dedicated folders
-find . -name '*Co-expression*' -exec mv -i {} ~/hena/comparison/data_db/genemania/coexp/ \;
-find . -name '*Physical_Interactions*' -exec mv -i {} ~/hena/comparison/data_db/genemania/ppi/ \;
-find . -name '*Genetic_Interactions*' -exec mv -i {} ~/hena/comparison/data_db/genemania/genetic_int/ \;
+#find . -name '*Co-expression*' -exec mv -i {} ~/hena/comparison/data_db/genemania/coexp/ \;
+mv Co-expression* data_db/genemania/coexp/
+#find . -name '*Physical_Interactions*' -exec mv -i {} ~/hena/comparison/data_db/genemania/ppi/ \;
+mv Physical_Interactions* data_db/genemania/ppi/
+#find . -name '*Genetic_Interactions*' -exec mv -i {} ~/hena/comparison/data_db/genemania/genetic_int/ \;
+mv Genetic_Interactions* data_db/genemania/genetic_int/
 
-
+cd data_db
 # Data folder folder for string_db
 mkdir data_db/string_db
 cd data_db/string_db/
