@@ -26,7 +26,7 @@ int_aba_coexp<-int_aba_coexp[int_aba_coexp$score>=0.5,]
 int<- int[!int$data_source%in%c("ABA_CA1",
 "ABA_CA2", "ABA_CA3", "ABA_CA4", "ABA_SptN", "ABA_subiculum","ABA_DG"),]
 int_filt <- rbind(int,int_aba_coexp)
-rm(int,int_aba_coexp)
+#rm(int,int_aba_coexp)
 
 ############### Prepare attributes ###############################################################
 print("Loading node attributes")

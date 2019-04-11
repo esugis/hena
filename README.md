@@ -26,7 +26,7 @@ Or download and unpack project .zip archive.
 By default the project will be cloned or unpacked to the folder `hena`.  
 
 ## STRUCTURE
-Navigate to the the folder `hena` main default catalogue of the project.
+Navigate to the folder `hena` main default catalogue of the project.
 
 In the terminal you can do it by typing:
 
@@ -490,7 +490,7 @@ HENA node attributes file: `https://ndownloader.figshare.com/files/14185124`
 ### Data set preparation for GCN application
 For this case study we have excluded IGRI to keep interactions between nodes that were mapped directly to genes, and co-expression interactions in disease related brain regions with low co-expression values (< 0.5).
 
-In order to perform classification task we have used gene status reagarding to its realtion to any disease in human based on the evolutionary studies review by Spataro et al. to define a negative class (see the article for details). This study identified ~1500 genes that have not shown  realtion to any of the diseases based on he evolutionary studies. In the node classification task these 1500 genes will constitute a negative class. The file with the the gene status is located in here `case_study/data/negative_class/gene_status.csv`.
+In order to perform classification task we have used gene status reagarding to its realtion to any disease in human based on the evolutionary studies review by Spataro et al. to define a negative class (see the article for details). This study identified ~1500 genes that have not shown  realtion to any of the diseases based on he evolutionary studies. In the node classification task these 1500 genes will constitute a negative class. The file with the gene status is located in here `case_study/data/negative_class/gene_status.csv`.
 
 Data set preparation for the application of GCN  is performed  by executing the following R scripts from the root project directory `hena`.
 These scripts assume you have executed script `hena/data_downloader.sh`

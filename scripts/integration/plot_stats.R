@@ -31,19 +31,23 @@ integrated_int_plot <- integrated_int[,4:5]
 
 pdf("results/integration/integrated_int_stats_stacked_hist.pdf")
 ggplot(data = integrated_int_plot, aes(x = data_source,fill = interaction_type)) +
-  geom_histogram(alpha=0.7, stat="count") +
-  stat_count( geom="text", colour="white", size=2, angle=90,
+  geom_histogram(alpha=0.7, stat="count", binwidth = 30) +
+  stat_count( geom="text", colour="black", size=2, hjust=1,
               aes(label=..count.., group=interaction_type, y=0.5*(..count..)))+
   theme_bw()+
   labs(x = "Data source")+
   labs(y= "Number of Interactions")+
-  theme(axis.text.y= element_blank(),
-        axis.text.x = element_text(angle=90, hjust=1,vjust=-0.001,size = 6),
+  theme(axis.text.y= element_text(hjust=1,vjust=-0.001,size = 6),
+        #axis.text.x = element_text(vjust=-0.001,size = 6),
         #axis.text.y = element_text(angle=90),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
-        axis.ticks.y = element_blank())+
-  guides(fill=guide_legend(title="Interaction type"))+ scale_y_continuous(trans='log2')
+        axis.ticks.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.text.x=element_blank(),
+        legend.position = c(0.83, 0.5))+
+  guides(fill=guide_legend(title="Interaction type"))+ scale_y_continuous(trans='log2')+
+  coord_flip()
 
 dev.off()
 
