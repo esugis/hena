@@ -495,7 +495,7 @@ In order to perform classification task we have used gene status reagarding to i
 Data set preparation for the application of GCN  is performed  by executing the following R scripts from the root project directory `hena`.
 These scripts assume you have executed script `hena/data_downloader.sh`
 ```
-Rscript case_study/scripts/highly_exp_genes_in_dis_brain_regions.r
+Rscript case_study/scripts/highly_exp_genes_in_dis_brain_regions.R
 Rscript case_study/scripts/prepare_data_GCN.R
 ```
 This will result in two files `case_study/datasets/genes_data/interactions.csv` and  `case_study/datasets/genes_data/node_attributes.csv`. 
