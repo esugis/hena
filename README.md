@@ -16,6 +16,9 @@ To exicute only *case study* analysis with the application of Graph Convolutiona
 ## INSTALLATION REQUIREMENTS
  R (version > 3.4.2) that can be installed from [here](https://cran.r-project.org/). 
 
+## LICENSE
+
+See [LICENSE](https://github.com/esugis/hena/blob/master/License.md) file for license rights and limitations (MIT).
 
 ## GETTING STARTED
 1. Clone repository to your local machine or to the server use the following command:  
