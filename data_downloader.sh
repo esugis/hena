@@ -169,3 +169,4 @@ mkdir comparison_public_db
 mkdir case_study
 mkdir case_study/datasets
 mkdir case_study/datasets/genes_data
+mkdir case_study/results/
