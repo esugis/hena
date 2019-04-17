@@ -19,12 +19,12 @@ int<- integrated_int[!integrated_int$interaction_type%in%"IGRI",]
 
 # Set coexpression cutoff in ABA datasets to >0.5
 int_aba_coexp<-int[int$data_source%in%c("ABA_CA1",
-"ABA_CA2", "ABA_CA3", "ABA_CA4", "ABA_SptN", "ABA_subiculum","ABA_DG"),]
+"ABA_CA2", "ABA_CA3", "ABA_CA4", "ABA_Sptn", "ABA_subiculum","ABA_DG"),]
 int_aba_coexp<-int_aba_coexp[int_aba_coexp$score>=0.5,]
 
 # Combine filetered dataset
 int<- int[!int$data_source%in%c("ABA_CA1",
-"ABA_CA2", "ABA_CA3", "ABA_CA4", "ABA_SptN", "ABA_subiculum","ABA_DG"),]
+"ABA_CA2", "ABA_CA3", "ABA_CA4", "ABA_Sptn", "ABA_subiculum","ABA_DG"),]
 int_filt <- rbind(int,int_aba_coexp)
 #rm(int,int_aba_coexp)
 
