@@ -179,5 +179,4 @@ wlx_genes_allsam2engs_maxp <- as.data.frame(wlx_genes_allsam2engs_maxp)
 dim(wlx_genes_allsam2engs_maxp)
 wlx_genes<-wlx_genes_allsam2engs_maxp
 rm(wlx_genes_allsam2engs_maxp)
-#save(wlx_genes, file="case_study/results/wlx_genes.RData")
 save(wlx_genes, file="case_study/datasets/genes_data/wlx_genes.RData")
