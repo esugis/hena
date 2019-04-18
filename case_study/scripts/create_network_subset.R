@@ -61,7 +61,7 @@ int_alz <- int_small_net[int_small_net$data_source%in%"ADIA",]
 intact_alz_nodes <-unique(c(int_alz$ensg.A, int_alz$ensg.B))
 
 # Combine node lists
-alz_nodes <- c(gwas_nodes, intact_alz_nodes)
+alz_nodes <- unique(c(gwas_nodes, intact_alz_nodes))
 
 ### Extract 2HOP neighbourhoods of genes associated with disease
 graph_2hop_alz_subgs <- make_ego_graph(g, 2, alz_nodes)
