@@ -80,8 +80,16 @@ gsize(graph_2hop_alz)
 2hop_alz_int <- as_data_frame(graph_2hop_alz, what="edges")
 
 # Save to file as RData and as txt
-save(2hop_alz_int, file="2hop_alz_int.RData")
+save(2hop_alz_int, file="case_study/datasets/genes_data/2hop_alz_int.RData")
 write.table(2hop_alz_int, file="case_study/datasets/genes_data/2hop_alz_int.txt", sep="\t", quote=F, row.names = F)
+
+# Extract and save corresponding node attributes
+2hop_nodes <-unique(c(2hop_alz_int$ensg.A, 2hop_alz_int$ensg.B))
+2hop_alz_attributes <- node_attributes_small_net[node_attributes_small_net$ensg%in%2hop_nodes,]
+
+save(2hop_alz_attributes, file="case_study/datasets/genes_data/2hop_alz_attributes.RData")
+write.table(2hop_alz_attributes, file="case_study/datasets/genes_data/2hop_alz_attributes.txt", sep="\t", quote=F, row.names = F)
+
 
 ### Extract 1HOP neighbourhoods of genes associated with disease
 graph_1hop_alz_subgs <- make_ego_graph(g, 1, alz_nodes)
@@ -100,5 +108,13 @@ gsize(graph_1hop_alz)
 1hop_alz_int <- as_data_frame(graph_1hop_alz, what="edges")
 
 # Save to file as RData and as txt
-save(1hop_alz_int, file="1hop_alz_int.RData")
+save(1hop_alz_int, file="case_study/datasets/genes_data/1hop_alz_int.RData")
 write.table(1hop_alz_int, file="case_study/datasets/genes_data/1hop_alz_int.txt", sep="\t", quote=F, row.names = F)
+
+# Extract and save corresponding node attributes
+1hop_nodes <-unique(c(1hop_alz_int$ensg.A, 1hop_alz_int$ensg.B))
+1hop_alz_attributes <- node_attributes_small_net[node_attributes_small_net$ensg%in%1hop_nodes,]
+
+save(1hop_alz_attributes, file="case_study/datasets/genes_data/1hop_alz_attributes.RData")
+write.table(1hop_alz_attributes, file="case_study/datasets/genes_data/1hop_alz_attributes.txt", sep="\t", quote=F, row.names = F)
+
