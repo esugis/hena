@@ -116,4 +116,5 @@ write.table(1hop_alz_int, file="case_study/datasets/genes_data/1hop_alz_int.txt"
 
 save(1hop_alz_attributes, file="case_study/datasets/genes_data/1hop_alz_attributes.RData")
 write.table(1hop_alz_attributes, file="case_study/datasets/genes_data/1hop_alz_attributes.txt", sep="\t", quote=F, row.names = F)
-
+###
+###
