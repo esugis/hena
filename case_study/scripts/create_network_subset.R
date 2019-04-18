@@ -53,7 +53,7 @@ g <- graph_from_data_frame(int_small_net, directed=FALSE)
 ### TODO!!!!!Create a vector of node names that are associated with Alzheimer's disease
 
 node_attributes_small_net$GWAS_pvalue<-as.numeric(node_attributes_small_net$GWAS_pvalue)
-gwas_node_att <- node_attributes_small_net[!is.na(node_attributes_small_net$GWAS_pvalue),c(2)]
+gwas_node_att <- node_attributes_small_net[!is.na(node_attributes_small_net$GWAS_pvalue),]
 gwas_nodes <- unique(gwas_node_att$ensg)
 
 # List of nodes from IntAct Alzheimer's dataset
