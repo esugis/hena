@@ -43,14 +43,12 @@ node_attributes_small_net<-node_attributes[node_attributes$ensg%in%ds_ensg,]
 save(node_attributes_small_net, file="case_study/datasets/genes_data/node_attributes_small_net.RData")
 #24825
 
-
-print("Extracting 1-hop neighbourhoods of Alzheimer's disease related genes in HENA")
+############### Extracting 1-hop  and 2-hop neighbourhoods of Alzheimer's disease related genes in HENA"############
+print("Extracting 1-hop  and 2-hop neighbourhoods of Alzheimer's disease related genes in HENA")
 library(igraph)
 
 ### Make a graph from interactions dataframe
 g <- graph_from_data_frame(int_small_net, directed=FALSE)
-
-#V(g)$name <- c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j")
 
 ### TODO!!!!!Create a vector of node names that are associated with Alzheimer's disease
 
