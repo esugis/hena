@@ -91,6 +91,48 @@ interactions<-interactions[!duplicated(interactions),]
 print("Number of interactions in the data set")
 dim(interactions)[1]
 
+# Count unique interactions (co-expression, ppi, epistasis)
+ppi_subg<-interactions[interactions$int_type%in%"PPI",1:2]
+ppi_subg_int <- data.frame(t(apply(ppi_subg[,1:2], 1, sort)))
+ppi_subg_int <- ppi_subg_int[!duplicated(ppi_subg_int), ]
+
+ppi_subg_int$X1 <- as.character(ppi_subg_int$X1)
+ppi_subg_int$X2 <- as.character(ppi_subg_int$X2)
+colnames(ppi_subg_int)[1:2] <- c("ensg1","ensg2")
+#dim(ppi_subg_int)
+#length(unique(c(ppi_subg$ensg1,ppi_subg$ensg2)))
+
+epi_subg<-interactions[interactions$int_type%in%"epistasis",1:2]
+epi_subg_int <- data.frame(t(apply(epi_subg[,1:2], 1, sort)))
+epi_subg_int <- epi_subg_int[!duplicated(epi_subg_int), ]
+
+epi_subg_int$X1 <- as.character(epi_subg_int$X1)
+epi_subg_int$X2 <- as.character(epi_subg_int$X2)
+colnames(epi_subg_int)[1:2] <- c("ensg1","ensg2")
+
+#dim(epi_subg_int)
+#length(unique(c(epi_subg$ensg1,epi_subg$ensg2)))
+
+coexp_subg<-interactions[interactions$int_type%in%"coexpression",1:2]
+coexp_subg_int <- data.frame(t(apply(coexp_subg[,1:2], 1, sort)))
+coexp_subg_int <- coexp_subg_int[!duplicated(coexp_subg_int), ]
+
+coexp_subg_int$X1 <- as.character(coexp_subg_int$X1)
+coexp_subg_int$X2 <- as.character(coexp_subg_int$X2)
+colnames(coexp_subg_int)[1:2] <- c("ensg1","ensg2")
+#dim(coexp_subg_int)
+#length(unique(c(coexp_subg$ensg1,coexp_subg$ensg2)))
+
+# Combine subgraphs with removed duplicates
+ppi_subg_int <- cbind(ppi_subg_int, int_type = "PPI")
+epi_subg_int <- cbind(epi_subg_int, int_type = "epistasis")
+coexp_subg_int <- cbind(coexp_subg_int, int_type = "coexpression")
+
+interactions <- rbind(ppi_subg_int,epi_subg_int, coexp_subg_int)
+interactions$int_type <- as.character(interactions$int_type)
+ensg_int<- unique(c(interactions$ensg1, interactions$ensg2))
+node_attributes <- node_attributes[node_attributes$ensg%in%ensg_int, ]
+
 ################# Write to file ##################
 print("Writing prepared data sets as RData and csv. Use csv files in case study.")
 save(interactions, file="case_study/datasets/genes_data/interactions.RData")
