@@ -13,7 +13,7 @@ dir.create(file.path(resdir),showWarnings = FALSE, recursive = TRUE)
 # Load integrated dataset
 print("Loading interactions")
 #load(file="case_study/data/integrated_int.RData")
-load(file="results/integration/integrated_int.RData")
+load(file="case_study/data/integrated_int.RData")
 print("Preparing intercations")
 
 # Exclude IGRI
