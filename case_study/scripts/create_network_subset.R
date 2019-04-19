@@ -95,7 +95,7 @@ graph_1hop_alz_subgs <- make_ego_graph(g, 1, alz_nodes)
 
 # Combine individual subgraphs
 g_combined_1hop <- as_data_frame(graph_1hop_alz_subgs[[1]], what="edges")
-g_combined_1hop<- g_combined_1hop[!duplicated(g_combined_1hop), ]
+g_combined_1hop <- g_combined_1hop[!duplicated(g_combined_1hop), ]
 for (i in 2:length(graph_1hop_alz_subgs)){
     df_add<- as_data_frame(graph_1hop_alz_subgs[[i]] , what="edges")
     df_add <- df_add[!duplicated(df_add), ]
