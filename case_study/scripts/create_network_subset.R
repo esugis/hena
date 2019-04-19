@@ -94,17 +94,21 @@ alz_nodes <- unique(c(gwas_nodes, intact_alz_nodes))
 graph_1hop_alz_subgs <- make_ego_graph(g, 1, alz_nodes)
 
 # Combine individual subgraphs
-g_combined_1hop <- graph_1hop_alz_subgs[[1]]
+g_combined_1hop <- as_data_frame(graph_1hop_alz_subgs[[1]], what="edges")
+g_combined_1hop<- g_combined_1hop[!duplicated(g_combined_1hop), ]
 for (i in 2:length(graph_1hop_alz_subgs)){
-    g_combined_1hop<-union(g_combined_1hop, graph_1hop_alz_subgs[[i]])
+    df_add<- as_data_frame(graph_1hop_alz_subgs[[i]] , what="edges")
+    df_add <- df_add[!duplicated(df_add), ]
+    g_combined_1hop<-rbind(g_combined_1hop, df_add)
+    g_combined_1hop <- g_combined_1hop[!duplicated(g_combined_1hop), ]
 }
-graph_1hop_alz <- g_combined_1hop
+colnames(g_combined_1hop)[1:2]<-c("ensg1", "ensg2")
+g_combined_1hop_no_iah<-g_combined_1hop[!g_combined_1hop$data_source%in%"IAH",]
 
-# Check the number of interactions
-gsize(graph_1hop_alz)
+# Select interactions with max values for PPI from IntAct
+g_combined_1hop_max_iah <- aggregate(score ~ ensg1 + ensg2 + interaction_type + data_source, data = g_combined_1hop[g_combined_1hop$data_source%in%"IAH",], max)
 
-# Convert to dataframe from graph structure
-alz_int_1hop <- as_data_frame(graph_1hop_alz, what="edges")
+graph_1hop_alz <- rbind(g_combined_1hop_no_iah,g_combined_1hop_max_iah)
 
 # Save to file as RData and as txt
 save(alz_int_1hop, file="case_study/datasets/genes_data/alz_int_1hop.RData")
