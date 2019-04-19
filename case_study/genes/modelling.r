@@ -134,10 +134,10 @@ dt_all <- left_join(dt_nodes, nodes_hops, by= "ensg") %>%
 
 # reducing graph and nodes to those that have non-empty biological features
 # reducing graph and nodes to those that have non-empty biological features
-#dt_reduced <- dt_all
-#dt_reduced$is_empty <- rowSums(dt_reduced[,c(3:234)])
-#dt_reduced <- filter(dt_reduced, is_empty!=0)
-#dt_reduced$is_empty <- NULL
+dt_reduced <- dt_all
+dt_reduced$is_empty <- rowSums(dt_reduced[,c(3:234)])
+dt_reduced <- filter(dt_reduced, is_empty!=0)
+dt_reduced$is_empty <- NULL
 dt_reduced <- dt_all
 #---------------------------------#
 # 3 sets of features
