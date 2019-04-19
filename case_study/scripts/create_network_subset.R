@@ -62,34 +62,6 @@ intact_alz_nodes <-unique(c(int_alz$ensg.A, int_alz$ensg.B))
 # Combine node lists
 alz_nodes <- unique(c(gwas_nodes, intact_alz_nodes))
 
-### Extract 2HOP neighbourhoods of genes associated with disease
-#graph_2hop_alz_subgs <- make_ego_graph(g, 2, alz_nodes)
-
-# Combine individual subgraphs
-#g_combined_2hop <- graph_2hop_alz_subgs[[1]]
-#for (i in 2:length(graph_2hop_alz_subgs)){
-#    g_combined_2hop<-union(g_combined_2hop, graph_2hop_alz_subgs[[i]])
-#}
-#graph_2hop_alz <- g_combined_2hop
-
-# Check the number of interactions
-#gsize(graph_2hop_alz)
-
-# Convert to dataframe from graph structure
-#2hop_alz_int <- as_data_frame(graph_2hop_alz, what="edges")
-
-# Save to file as RData and as txt
-#save(2hop_alz_int, file="case_study/datasets/genes_data/2hop_alz_int.RData")
-#write.table(2hop_alz_int, file="case_study/datasets/genes_data/2hop_alz_int.txt", sep="\t", quote=F, row.names = F)
-
-# Extract and save corresponding node attributes
-#2hop_nodes <-unique(c(2hop_alz_int$ensg.A, 2hop_alz_int$ensg.B))
-#2hop_alz_attributes <- node_attributes_small_net[node_attributes_small_net$ensg%in%2hop_nodes,]
-
-#save(2hop_alz_attributes, file="case_study/datasets/genes_data/2hop_alz_attributes.RData")
-#write.table(2hop_alz_attributes, file="case_study/datasets/genes_data/2hop_alz_attributes.txt", sep="\t", quote=F, row.names = F)
-
-
 ### Extract 1HOP neighbourhoods of genes associated with disease
 graph_1hop_alz_subgs <- make_ego_graph(g, 1, alz_nodes)
 
@@ -122,4 +94,4 @@ save(alz_attributes_1hop, file="case_study/datasets/genes_data/alz_attributes_1h
 write.table(alz_attributes_1hop, file="case_study/datasets/genes_data/alz_attributes_1hop.txt", sep="\t", quote=F, row.names = F)
 ###
 ###
-as_data_frame(g, what="edges")
+
