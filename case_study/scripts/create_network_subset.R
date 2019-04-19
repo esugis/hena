@@ -81,7 +81,7 @@ g_combined_1hop_no_iah<-g_combined_1hop[!g_combined_1hop$data_source%in%"IAH",]
 g_combined_1hop_max_iah <- aggregate(score ~ ensg1 + ensg2 + interaction_type + data_source, data = g_combined_1hop[g_combined_1hop$data_source%in%"IAH",], max)
 
 graph_1hop_alz <- rbind(g_combined_1hop_no_iah,g_combined_1hop_max_iah)
-
+alz_int_1hop<-graph_1hop_alz
 # Save to file as RData and as txt
 save(alz_int_1hop, file="case_study/datasets/genes_data/alz_int_1hop.RData")
 write.table(alz_int_1hop, file="case_study/datasets/genes_data/alz_int_1hop.txt", sep="\t", quote=F, row.names = F)
