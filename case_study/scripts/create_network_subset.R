@@ -87,7 +87,7 @@ save(alz_int_1hop, file="case_study/datasets/genes_data/alz_int_1hop.RData")
 write.table(alz_int_1hop, file="case_study/datasets/genes_data/alz_int_1hop.txt", sep="\t", quote=F, row.names = F)
 
 # Extract and save corresponding node attributes
-nodes_1hop <-unique(c(alz_int_1hop$ensg.A, alz_int_1hop$ensg.B))
+nodes_1hop <-unique(c(alz_int_1hop$ensg1, alz_int_1hop$ensg2))
 alz_attributes_1hop <- node_attributes_small_net[node_attributes_small_net$ensg%in%nodes_1hop,]
 
 save(alz_attributes_1hop, file="case_study/datasets/genes_data/alz_attributes_1hop.RData")
