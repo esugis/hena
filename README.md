@@ -4,6 +4,9 @@ The scripts in this repository were used to create integrated dataset described 
 *The integrated dataset consists of two parts: edge list of interactions deposited in one file and the file with node(gene) attributes.*
 *For detailed description of the methods please see the publication.*
 
+[![DOI](https://zenodo.org/badge/169299808.svg)](https://zenodo.org/badge/latestdoi/169299808)
+
+
 ## IMPORTANT. BEFORE WE START
 
 **NB! This file contains information about the structure of the files and some useful notes on how to repeat the analysis.
