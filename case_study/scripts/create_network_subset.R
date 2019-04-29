@@ -47,7 +47,7 @@ node_attributes_small_net<-node_attributes[node_attributes$ensg%in%ds_ensg,]#247
 # Write to file
 print("Writing node attributes to file")
 save(node_attributes_small_net, file="case_study/datasets/genes_data/node_attributes_small_net.RData")
-write.table(int_small_net, file="case_study/datasets/genes_data/int_small_net.txt", sep="\t", quote=F, row.names = F)
+write.table(node_attributes_small_net, file="case_study/datasets/genes_data/node_attributes_small_net.txt", sep="\t", quote=F, row.names = F)
 
 
 ############### Extracting 1-hop  and 2-hop neighbourhoods of Alzheimer's disease related genes in HENA"############
